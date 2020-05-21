@@ -8,10 +8,12 @@ var juniorPriceTicket;
 var seniorPriceTicket;
 
 if (passengerAge < 18) {
-  juniorPriceTicket = (fullPriceTicket * 20) / 100;
+   juniorDiscount = (fullPriceTicket * 20) / 100;
+   juniorPriceTicket = fullPriceTicket - juniorDiscount;
   document.getElementById('ticket-price').innerHTML = juniorPriceTicket.toFixed(2);
 } else if (passengerAge > 65) {
-  seniorPriceTicket = (fullPriceTicket * 40) / 100;
+  seniorDiscount = (fullPriceTicket * 40) / 100;
+  seniorPriceTicket = fullPriceTicket - seniorDiscount;
   document.getElementById('ticket-price').innerHTML = seniorPriceTicket.toFixed(2);
 } else {
   document.getElementById('ticket-price').innerHTML = fullPriceTicket.toFixed(2);
